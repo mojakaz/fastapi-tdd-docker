@@ -1,4 +1,6 @@
 env
+tests
 .dockerignore
+.pytest_cache
 Dockerfile
 Dockerfile.prod
