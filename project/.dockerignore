@@ -1,7 +1,9 @@
-env
-tests
+**/env
 .dockerignore
-.pytest_cache
 Dockerfile
 Dockerfile.prod
+**/tests
+**/.pytest_cache
 **/__pycache__
+**/htmlcov
+**/.coverage*

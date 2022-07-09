@@ -2,3 +2,5 @@
 **/__init__.py
 **/env
 **/.pytest-cache
+**/htmlcov
+**/.coverage*
