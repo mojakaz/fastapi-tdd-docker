@@ -2,7 +2,6 @@
 .dockerignore
 Dockerfile
 Dockerfile.prod
-**/tests
 **/.pytest_cache
 **/__pycache__
 **/htmlcov
