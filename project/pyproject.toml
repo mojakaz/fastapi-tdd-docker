@@ -2,3 +2,25 @@
 tortoise_orm = "app.db.TORTOISE_ORM"
 location = "./migrations"
 src_folder = "./."
+
+[tool.black]
+exclude = '''
+^/(
+  (
+      \.coverage         # exclude a few common directories in the
+    | \.coveragerc       # root of the project
+    | \.dockerignore
+    | entrypoint.sh
+    | \.pytest_cache
+    | __pycache__
+    | env
+    | htmlcov
+    | tests
+    | migrations
+  )/
+  | \.git
+  | \.github
+  | \.gitignore         # also separately exclude a file named foo.py in
+                     # the root of the project
+)
+'''
