@@ -1,6 +1,8 @@
 # pull official base image
 FROM python:3.10.5-slim-buster
 
+LABEL org.opencontainers.image.source https://github.com/mojakaz/fastapi-tdd-docker
+
 # create directory for the app user
 RUN mkdir -p /home/app
 
