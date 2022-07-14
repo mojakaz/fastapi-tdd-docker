@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "==0.78.0"
+uvicorn = "==0.18.2"
+asyncpg = "==0.25.0"
+tortoise-orm = "==0.19.1"
+aerich = "==0.6.3"
+pytest = "==7.1.2"
+requests = "==2.28.1"
+gunicorn = "==20.1.0"
+pytest-cov = "==3.0.0"
+flake8 = "==4.0.1"
+black = "==22.6.0"
+isort = "==5.10.1"
+pytest-xdist = "==2.5.0"
+newspaper3k = "==0.2.8"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
