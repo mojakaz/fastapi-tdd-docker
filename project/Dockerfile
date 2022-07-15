@@ -18,6 +18,9 @@ RUN pip install --upgrade pip
 COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 
+# download nltk package punkt
+RUN python3 -m nltk.downloader punkt
+
 # add app
 COPY . .
 
