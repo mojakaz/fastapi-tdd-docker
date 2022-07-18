@@ -16,7 +16,8 @@ RUN apt-get update \
 # install python dependencies
 RUN pip install --upgrade pip
 COPY ./requirements.txt .
-RUN pip install -r requirements.txt
+COPY ./requirements-dev.txt .
+RUN pip install -r requirements-dev.txt
 
 # download nltk package punkt
 RUN python3 -m nltk.downloader punkt
