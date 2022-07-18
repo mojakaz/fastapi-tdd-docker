@@ -15,7 +15,9 @@ from app.models.pydantic import (  # isort:skip
 router = APIRouter()
 
 
-@router.post("/", response_model=SummaryResponseSchema, status_code=201, tags=["summaries"])
+@router.post(
+    "/", response_model=SummaryResponseSchema, status_code=201, tags=["summaries"]
+)
 async def create_summary(
     payload: SummaryPayloadSchema, background_tasks: BackgroundTasks
 ) -> SummaryResponseSchema:
