@@ -15,7 +15,7 @@ from app.models.pydantic import (  # isort:skip
 router = APIRouter()
 
 
-@router.post("/", response_model=SummaryResponseSchema, status_code=201)
+@router.post("/", response_model=SummaryResponseSchema, status_code=201, tags=["summaries"])
 async def create_summary(
     payload: SummaryPayloadSchema, background_tasks: BackgroundTasks
 ) -> SummaryResponseSchema:
@@ -27,12 +27,12 @@ async def create_summary(
     return response_object
 
 
-@router.get("/", response_model=List[SummarySchema])
+@router.get("/", response_model=List[SummarySchema], tags=["summaries"])
 async def read_all_summaries() -> List[SummarySchema]:
     return await crud.get_all()
 
 
-@router.get("/{id}/", response_model=SummarySchema)
+@router.get("/{id}/", response_model=SummarySchema, tags=["summaries"])
 async def read_summary(id: int = Path(..., gt=0)) -> SummarySchema:
     summary = await crud.get(id)
     if not summary:
@@ -41,7 +41,7 @@ async def read_summary(id: int = Path(..., gt=0)) -> SummarySchema:
     return summary
 
 
-@router.delete("/{id}/", response_model=SummaryResponseSchema)
+@router.delete("/{id}/", response_model=SummaryResponseSchema, tags=["summaries"])
 async def delete_summary(id: int = Path(..., gt=0)) -> SummaryResponseSchema:
     summary = await crud.get(id)
     if not summary:
@@ -52,7 +52,7 @@ async def delete_summary(id: int = Path(..., gt=0)) -> SummaryResponseSchema:
     return summary
 
 
-@router.put("/{id}/", response_model=SummarySchema)
+@router.put("/{id}/", response_model=SummarySchema, tags=["summaries"])
 async def update_summary(
     *, id: int = Path(..., gt=0), payload: SummaryUpdatePayloadSchema
 ) -> SummarySchema:
